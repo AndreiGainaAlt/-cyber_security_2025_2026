@@ -1,0 +1,232 @@
+\begin{frame}
+\begin{block}{Докладчик}
+\phantomsection\label{ux434ux43eux43aux43bux430ux434ux447ux438ux43a}
+\begin{itemize}
+\tightlist
+\item
+  Козлов В.П., Гэинэ А., Шуваев С., Джахангиров И.З, Хватов М.Г.
+\item
+  НФИбд-02-22
+\item
+  Российский университет дружбы народов
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Выполнение лабораторной работы}
+\phantomsection\label{ux432ux44bux43fux43eux43bux43dux435ux43dux438ux435-ux43bux430ux431ux43eux440ux430ux442ux43eux440ux43dux43eux439-ux440ux430ux431ux43eux442ux44b}
+\begin{block}{Цель работы}
+\phantomsection\label{ux446ux435ux43bux44c-ux440ux430ux431ux43eux442ux44b}
+Отработать сценарий: Защита интеграционной платформы
+\end{block}
+
+\begin{block}{Задание}
+\phantomsection\label{ux437ux430ux434ux430ux43dux438ux435}
+\begin{enumerate}
+\item
+  Обнаружить Bitrix vote RCE на Bitrix Server.
+\item
+  Устранить уязвимость путём отклонения всех запросов к директории vote.
+\item
+  Устранить последствие (Deface). Восстанавливаем бэкап сайта.
+\item
+  Обнаружить GitLab RCE на узле GitLab.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item
+  Зайти в панель администратора, ужесточить регистрацию. Удалить
+  неизвестных пользователей.
+\item
+  Устранить последствие (Gitlab meterpreter). Убиваем сессию нарушителя.
+\item
+  Обнаружить WSO2 API-Manager RCE на узле MS API Manager.
+\item
+  Изменить параметр загрузки ресурсов в конфиг файле.
+\item
+  Устранить последствие (WSO Web User). Удалить нового
+  привилегированного пользователя. Удалить бэкдор
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-1}
+\begin{block}{На сайте ViPNet IDS NS просмотрели атакованные активы и
+суть атак}
+\phantomsection\label{ux43dux430-ux441ux430ux439ux442ux435-vipnet-ids-ns-ux43fux440ux43eux441ux43cux43eux442ux440ux435ux43bux438-ux430ux442ux430ux43aux43eux432ux430ux43dux43dux44bux435-ux430ux43aux442ux438ux432ux44b-ux438-ux441ux443ux442ux44c-ux430ux442ux430ux43a}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/2.png}
+\caption{Атакованные ip-адреса}\label{fig:300}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-2}
+\begin{block}{Добавили карточку инцидента ``Bitrix vote RCE'' (рис.
+{[}-@fig:100{]})}
+\phantomsection\label{ux434ux43eux431ux430ux432ux438ux43bux438-ux43aux430ux440ux442ux43eux447ux43aux443-ux438ux43dux446ux438ux434ux435ux43dux442ux430-bitrix-vote-rce-ux440ux438ux441.--fig100}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/100.png}
+\caption{Карточка инцидента ``Bitrix vote RCE''}\label{fig:100}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-3}
+\begin{block}{Добавили карточку инцидента ``GitLab RCE'' (рис.
+{[}-@fig:200{]})}
+\phantomsection\label{ux434ux43eux431ux430ux432ux438ux43bux438-ux43aux430ux440ux442ux43eux447ux43aux443-ux438ux43dux446ux438ux434ux435ux43dux442ux430-gitlab-rce-ux440ux438ux441.--fig200}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/200.png}
+\caption{Карточка инцидента ``GitLab RCE''}\label{fig:200}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-4}
+\begin{block}{Добавили карточку инцидента ``WSO2 API-Manager RCE'' (рис.
+{[}-@fig:300{]})}
+\phantomsection\label{ux434ux43eux431ux430ux432ux438ux43bux438-ux43aux430ux440ux442ux43eux447ux43aux443-ux438ux43dux446ux438ux434ux435ux43dux442ux430-wso2-api-manager-rce-ux440ux438ux441.--fig300}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/300.png}
+\caption{Добавили карточку инцидента ``WSO2 API-Manager
+RCE''}\label{fig:300}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-5}
+\begin{block}{Bitrix vote RCE. Устранили уязвимость путём отклонения
+всех запросов к директории vote (рис. {[}-@fig:003{]})}
+\phantomsection\label{bitrix-vote-rce.-ux443ux441ux442ux440ux430ux43dux438ux43bux438-ux443ux44fux437ux432ux438ux43cux43eux441ux442ux44c-ux43fux443ux442ux451ux43c-ux43eux442ux43aux43bux43eux43dux435ux43dux438ux44f-ux432ux441ux435ux445-ux437ux430ux43fux440ux43eux441ux43eux432-ux43a-ux434ux438ux440ux435ux43aux442ux43eux440ux438ux438-vote-ux440ux438ux441.--fig003}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/3.png}
+\caption{.htaccess}\label{fig:003}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-6}
+\begin{block}{Bitrix vote RCE. Восстанавливаем бэкап сайта (рис.
+{[}-@fig:004{]})}
+\phantomsection\label{bitrix-vote-rce.-ux432ux43eux441ux441ux442ux430ux43dux430ux432ux43bux438ux432ux430ux435ux43c-ux431ux44dux43aux430ux43f-ux441ux430ux439ux442ux430-ux440ux438ux441.--fig004}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/4.png}
+\caption{Процесс восстановления бэкапа}\label{fig:004}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-7}
+\begin{block}{GitLab RCE. Заходим на панель администратора, ужесточаем
+регистрацию (рис. {[}-@fig:005{]})}
+\phantomsection\label{gitlab-rce.-ux437ux430ux445ux43eux434ux438ux43c-ux43dux430-ux43fux430ux43dux435ux43bux44c-ux430ux434ux43cux438ux43dux438ux441ux442ux440ux430ux442ux43eux440ux430-ux443ux436ux435ux441ux442ux43eux447ux430ux435ux43c-ux440ux435ux433ux438ux441ux442ux440ux430ux446ux438ux44e-ux440ux438ux441.--fig005}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/5.png}
+\caption{Настройки регистрации}\label{fig:005}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-8}
+\begin{block}{GitLab RCE. Удаляем неизвестного нам пользователя (рис.
+{[}-@fig:006{]})}
+\phantomsection\label{gitlab-rce.-ux443ux434ux430ux43bux44fux435ux43c-ux43dux435ux438ux437ux432ux435ux441ux442ux43dux43eux433ux43e-ux43dux430ux43c-ux43fux43eux43bux44cux437ux43eux432ux430ux442ux435ux43bux44f-ux440ux438ux441.--fig006}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/6.png}
+\caption{Удаляем неизвестного нам пользователя}\label{fig:006}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-9}
+\begin{block}{GitLab RCE. Находим PID сессию с нарушителем, убиваем её
+(рис. {[}-@fig:007{]})}
+\phantomsection\label{gitlab-rce.-ux43dux430ux445ux43eux434ux438ux43c-pid-ux441ux435ux441ux441ux438ux44e-ux441-ux43dux430ux440ux443ux448ux438ux442ux435ux43bux435ux43c-ux443ux431ux438ux432ux430ux435ux43c-ux435ux451-ux440ux438ux441.--fig007}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/7.png}
+\caption{Сессия нарушителя устранена}\label{fig:007}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-10}
+\begin{block}{WSO2 API-Manager RCE. Заходим на MS API Manager, изменяем
+паарметр загрузки ресурсов (рис. {[}-@fig:008{]})}
+\phantomsection\label{wso2-api-manager-rce.-ux437ux430ux445ux43eux434ux438ux43c-ux43dux430-ms-api-manager-ux438ux437ux43cux435ux43dux44fux435ux43c-ux43fux430ux430ux440ux43cux435ux442ux440-ux437ux430ux433ux440ux443ux437ux43aux438-ux440ux435ux441ux443ux440ux441ux43eux432-ux440ux438ux441.--fig008}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/8.png}
+\caption{Меняем конф}\label{fig:008}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-11}
+\begin{block}{WSO2 API-Manager RCE. Удаляем бэкдор (рис.
+{[}-@fig:009{]})}
+\phantomsection\label{wso2-api-manager-rce.-ux443ux434ux430ux43bux44fux435ux43c-ux431ux44dux43aux434ux43eux440-ux440ux438ux441.--fig009}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/9.png}
+\caption{Удалили бэкдор}\label{fig:009}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-12}
+\begin{block}{WSO2 API-Manager RCE. Удаляем нового пользователя (рис.
+{[}-@fig:009{]})}
+\phantomsection\label{wso2-api-manager-rce.-ux443ux434ux430ux43bux44fux435ux43c-ux43dux43eux432ux43eux433ux43e-ux43fux43eux43bux44cux437ux43eux432ux430ux442ux435ux43bux44f-ux440ux438ux441.--fig009}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/10.png}
+\caption{Удалили бэкдор}\label{fig:010}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-13}
+\begin{block}{Все атаки и их последствия успешно устранены}
+\phantomsection\label{ux432ux441ux435-ux430ux442ux430ux43aux438-ux438-ux438ux445-ux43fux43eux441ux43bux435ux434ux441ux442ux432ux438ux44f-ux443ux441ux43fux435ux448ux43dux43e-ux443ux441ux442ux440ux430ux43dux435ux43dux44b}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{image/11.png}
+\caption{Всё оки}\label{fig:011}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\phantomsection\label{section-14}
+\begin{block}{Выводы}
+\phantomsection\label{ux432ux44bux432ux43eux434ux44b}
+Отработали сценарий: Защита интеграционной платформы.
+\end{block}
+\end{frame}
