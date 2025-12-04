@@ -1,0 +1,130 @@
+<h1 id="цель-работы">Цель работы</h1>
+<p>Отработать сценарий: Захват DNS-Сервера.</p>
+<h1 id="задание">Задание</h1>
+<ol type="1">
+<li><p>Установить meterpreter-сессию с узлом в сегменте DMZ.</p></li>
+<li><p>Осуществить поиск DNS-сервера.</p></li>
+<li><p>Отсканировать 100 самых часто используемых портов.</p></li>
+<li><p>Обнаружить ответ от порта 22, а также 53, что стандартно для DNS
+сервера.</p></li>
+<li><p>Осуществить брут форс атаку.</p></li>
+<li><p>С помощью пароль, подключиться по ssh открыв новую shell
+сессию.</p></li>
+<li><p>Альтернативно, подключаемся за счёт модуля
+auxiliary(scanner/ssh/ssh_login).</p></li>
+</ol>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной
+работы</h1>
+<p>Запускаем msfconsole. Загружаем модуль exchange_proxyshell_rce (рис.
+<span class="citation" data-cites="fig:001">[-@fig:001]</span>)</p>
+<figure id="fig:001">
+<img src="image/1.png" style="width:70.0%"
+alt="Модуль exchange_proxyshell_rce. Настройки" />
+<figcaption aria-hidden="true">Модуль exchange_proxyshell_rce.
+Настройки</figcaption>
+</figure>
+<p>Настраиваем модуль и запускаем (рис. <span class="citation"
+data-cites="fig:002">[-@fig:002]</span>)</p>
+<figure id="fig:002">
+<img src="image/2.png" style="width:70.0%" alt="Настройка и запуск" />
+<figcaption aria-hidden="true">Настройка и запуск</figcaption>
+</figure>
+<p>Получаем сессию meterpreter. Выполняем проброс портов в сеть (рис.
+<span class="citation" data-cites="fig:003">[-@fig:003]</span>)</p>
+<figure id="fig:003">
+<img src="image/3.png" style="width:70.0%" alt="Пробрасываем порты”" />
+<figcaption aria-hidden="true">Пробрасываем порты”</figcaption>
+</figure>
+<p>Сворачиваем сессию. Переключаемся на модуль ping_sweep (рис. <span
+class="citation" data-cites="fig:004">[-@fig:004]</span>)</p>
+<figure id="fig:004">
+<img src="image/4.png" style="width:70.0%" alt="модуль ping_sweep”" />
+<figcaption aria-hidden="true">модуль ping_sweep”</figcaption>
+</figure>
+<p>Запускаем скан. Получаем открытый для нас рут во внутрь. (рис. <span
+class="citation" data-cites="fig:005">[-@fig:005]</span>)</p>
+<figure id="fig:005">
+<img src="image/5.png" style="width:70.0%"
+alt="Запуск ping_sweep и рут" />
+<figcaption aria-hidden="true">Запуск ping_sweep и рут</figcaption>
+</figure>
+<p>Отображаем хостов во внутренней сети (рис. <span class="citation"
+data-cites="fig:006">[-@fig:006]</span>)</p>
+<figure id="fig:006">
+<img src="image/6.png" style="width:70.0%"
+alt="Хосты внутренней сети" />
+<figcaption aria-hidden="true">Хосты внутренней сети</figcaption>
+</figure>
+<p>Переключаемся на socks proxy. Настраиваем (рис. <span
+class="citation" data-cites="fig:007">[-@fig:007]</span>)</p>
+<figure id="fig:007">
+<img src="image/7.png" style="width:70.0%"
+alt="Настройка socks proxy" />
+<figcaption aria-hidden="true">Настройка socks proxy</figcaption>
+</figure>
+<p>Сканируем 100 самых используемых портов (рис. <span class="citation"
+data-cites="fig:008">[-@fig:008]</span>)</p>
+<figure id="fig:008">
+<img src="image/8.png" style="width:70.0%" alt="Сканирование" />
+<figcaption aria-hidden="true">Сканирование</figcaption>
+</figure>
+<p>Видим уязвимости (рис. <span class="citation"
+data-cites="fig:009">[-@fig:009]</span>)</p>
+<figure id="fig:009">
+<img src="image/9.png" style="width:70.0%" alt="Открытые порты" />
+<figcaption aria-hidden="true">Открытые порты</figcaption>
+</figure>
+<p>Через hydra делаем подбор паролей (рис. <span class="citation"
+data-cites="fig:010">[-@fig:010]</span>)</p>
+<figure id="fig:010">
+<img src="image/10.png" style="width:70.0%" alt="Работа гидры" />
+<figcaption aria-hidden="true">Работа гидры</figcaption>
+</figure>
+<p>Нашли совпадение (рис. <span class="citation"
+data-cites="fig:011">[-@fig:011]</span>)</p>
+<figure id="fig:011">
+<img src="image/11.png" style="width:70.0%"
+alt="Гидра успешна нашла нам пароль" />
+<figcaption aria-hidden="true">Гидра успешна нашла нам
+пароль</figcaption>
+</figure>
+<p>Через ssh заходим на компьютер, пользуясь полученным паролем (рис.
+<span class="citation" data-cites="fig:012">[-@fig:012]</span>)</p>
+<figure id="fig:012">
+<img src="image/12.png" style="width:70.0%" alt="ssh сессия" />
+<figcaption aria-hidden="true">ssh сессия</figcaption>
+</figure>
+<p>Находим флажок. Захватываем его (рис. <span class="citation"
+data-cites="fig:013">[-@fig:013]</span>)</p>
+<figure id="fig:013">
+<img src="image/13.png" style="width:70.0%" alt="Флаг захвачен!" />
+<figcaption aria-hidden="true">Флаг захвачен!</figcaption>
+</figure>
+<p>Как альтернатива: пользуемся модулём ssh_login (рис. <span
+class="citation" data-cites="fig:014">[-@fig:014]</span>)</p>
+<figure id="fig:014">
+<img src="image/14.png" style="width:70.0%" alt="ssh_login" />
+<figcaption aria-hidden="true">ssh_login</figcaption>
+</figure>
+<p>Флажок найден (повторно) (рис. <span class="citation"
+data-cites="fig:015">[-@fig:015]</span>)</p>
+<figure id="fig:015">
+<img src="image/15.png" style="width:70.0%" alt="Флаг захвачен! х2" />
+<figcaption aria-hidden="true">Флаг захвачен! х2</figcaption>
+</figure>
+<h1 id="выводы">Выводы</h1>
+<p>Отработали сценарий: Захват DNS-Сервера.</p>
+<h1 id="список-литературы">Список литературы</h1>
+<ol type="1">
+<li><p><strong>CVE-2019-0630</strong> — Common Vulnerabilities and
+Exposures.<br />
+URL:
+<code>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0630</code></p></li>
+<li><p><strong>CVE-2019-17427</strong> — Уязвимость XSS в Redmine.<br />
+URL:
+<code>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-17427</code></p></li>
+<li><p><strong>CVE-2019-18890</strong> — Уязвимость Blind SQL-инъекции в
+Redmine.<br />
+URL:
+<code>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18890</code></p></li>
+</ol>

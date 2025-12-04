@@ -1,0 +1,235 @@
+\begin{frame}
+\begin{block}{Докладчик}
+\protect\phantomsection\label{ux434ux43eux43aux43bux430ux434ux447ux438ux43a}
+\begin{itemize}
+\tightlist
+\item
+  Козлов В.П., Гэинэ А., Шуваев С., Джахангиров И.З, Хватов М.Г.
+\item
+  НФИбд-02-22
+\item
+  Российский университет дружбы народов
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Цель работы}
+\protect\phantomsection\label{ux446ux435ux43bux44c-ux440ux430ux431ux43eux442ux44b}
+Отработать сценарий: Захват DNS-Сервера.
+\end{frame}
+
+\begin{frame}{Задание}
+\protect\phantomsection\label{ux437ux430ux434ux430ux43dux438ux435}
+\begin{enumerate}
+\item
+  Установить meterpreter-сессию с узлом в сегменте DMZ.
+\item
+  Осуществить поиск DNS-сервера.
+\item
+  Отсканировать 100 самых часто используемых портов.
+\item
+  Обнаружить ответ от порта 22, а также 53, что стандартно для DNS
+  сервера.
+\item
+  Осуществить брут форс атаку.
+\item
+  С помощью пароль, подключиться по ssh открыв новую shell сессию.
+\item
+  Альтернативно, подключаемся за счёт модуля
+  auxiliary(scanner/ssh/ssh\_login).
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Выполнение лабораторной работы}
+\protect\phantomsection\label{ux432ux44bux43fux43eux43bux43dux435ux43dux438ux435-ux43bux430ux431ux43eux440ux430ux442ux43eux440ux43dux43eux439-ux440ux430ux431ux43eux442ux44b}
+\begin{block}{Запускаем msfconsole. Загружаем модуль
+exchange\_proxyshell\_rce (рис. {[}-@fig:001{]})}
+\protect\phantomsection\label{ux437ux430ux43fux443ux441ux43aux430ux435ux43c-msfconsole.-ux437ux430ux433ux440ux443ux436ux430ux435ux43c-ux43cux43eux434ux443ux43bux44c-exchange_proxyshell_rce-ux440ux438ux441.--fig001}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Модуль exchange\_proxyshell\_rce. Настройки}]{image/1.png}
+\caption{Модуль exchange\_proxyshell\_rce. Настройки}\label{fig:001}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section}
+\begin{block}{Настраиваем модуль и запускаем (рис. {[}-@fig:002{]})}
+\protect\phantomsection\label{ux43dux430ux441ux442ux440ux430ux438ux432ux430ux435ux43c-ux43cux43eux434ux443ux43bux44c-ux438-ux437ux430ux43fux443ux441ux43aux430ux435ux43c-ux440ux438ux441.--fig002}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Настройка и запуск}]{image/2.png}
+\caption{Настройка и запуск}\label{fig:002}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-1}
+\begin{block}{Получаем сессию meterpreter. Выполняем проброс портов в
+сеть (рис. {[}-@fig:003{]})}
+\protect\phantomsection\label{ux43fux43eux43bux443ux447ux430ux435ux43c-ux441ux435ux441ux441ux438ux44e-meterpreter.-ux432ux44bux43fux43eux43bux43dux44fux435ux43c-ux43fux440ux43eux431ux440ux43eux441-ux43fux43eux440ux442ux43eux432-ux432-ux441ux435ux442ux44c-ux440ux438ux441.--fig003}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Пробрасываем порты''}]{image/3.png}
+\caption{Пробрасываем порты''}\label{fig:003}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-2}
+\begin{block}{Сворачиваем сессию. Переключаемся на модуль ping\_sweep
+(рис. {[}-@fig:004{]})}
+\protect\phantomsection\label{ux441ux432ux43eux440ux430ux447ux438ux432ux430ux435ux43c-ux441ux435ux441ux441ux438ux44e.-ux43fux435ux440ux435ux43aux43bux44eux447ux430ux435ux43cux441ux44f-ux43dux430-ux43cux43eux434ux443ux43bux44c-ping_sweep-ux440ux438ux441.--fig004}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={модуль ping\_sweep''}]{image/4.png}
+\caption{модуль ping\_sweep''}\label{fig:004}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-3}
+\begin{block}{Запускаем скан. Получаем открытый для нас рут во внутрь.
+(рис. {[}-@fig:005{]})}
+\protect\phantomsection\label{ux437ux430ux43fux443ux441ux43aux430ux435ux43c-ux441ux43aux430ux43d.-ux43fux43eux43bux443ux447ux430ux435ux43c-ux43eux442ux43aux440ux44bux442ux44bux439-ux434ux43bux44f-ux43dux430ux441-ux440ux443ux442-ux432ux43e-ux432ux43dux443ux442ux440ux44c.-ux440ux438ux441.--fig005}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Запуск ping\_sweep и рут}]{image/5.png}
+\caption{Запуск ping\_sweep и рут}\label{fig:005}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-4}
+\begin{block}{Отображаем хостов во внутренней сети (рис.
+{[}-@fig:006{]})}
+\protect\phantomsection\label{ux43eux442ux43eux431ux440ux430ux436ux430ux435ux43c-ux445ux43eux441ux442ux43eux432-ux432ux43e-ux432ux43dux443ux442ux440ux435ux43dux43dux435ux439-ux441ux435ux442ux438-ux440ux438ux441.--fig006}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Хосты внутренней сети}]{image/6.png}
+\caption{Хосты внутренней сети}\label{fig:006}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-5}
+\begin{block}{Переключаемся на socks proxy. Настраиваем (рис.
+{[}-@fig:007{]})}
+\protect\phantomsection\label{ux43fux435ux440ux435ux43aux43bux44eux447ux430ux435ux43cux441ux44f-ux43dux430-socks-proxy.-ux43dux430ux441ux442ux440ux430ux438ux432ux430ux435ux43c-ux440ux438ux441.--fig007}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Настройка socks proxy}]{image/7.png}
+\caption{Настройка socks proxy}\label{fig:007}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-6}
+\begin{block}{Сканируем 100 самых используемых портов (рис.
+{[}-@fig:008{]})}
+\protect\phantomsection\label{ux441ux43aux430ux43dux438ux440ux443ux435ux43c-100-ux441ux430ux43cux44bux445-ux438ux441ux43fux43eux43bux44cux437ux443ux435ux43cux44bux445-ux43fux43eux440ux442ux43eux432-ux440ux438ux441.--fig008}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Сканирование}]{image/8.png}
+\caption{Сканирование}\label{fig:008}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-7}
+\begin{block}{Видим уязвимости (рис. {[}-@fig:009{]})}
+\protect\phantomsection\label{ux432ux438ux434ux438ux43c-ux443ux44fux437ux432ux438ux43cux43eux441ux442ux438-ux440ux438ux441.--fig009}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Открытые порты}]{image/9.png}
+\caption{Открытые порты}\label{fig:009}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-8}
+\begin{block}{Через hydra делаем подбор паролей (рис. {[}-@fig:010{]})}
+\protect\phantomsection\label{ux447ux435ux440ux435ux437-hydra-ux434ux435ux43bux430ux435ux43c-ux43fux43eux434ux431ux43eux440-ux43fux430ux440ux43eux43bux435ux439-ux440ux438ux441.--fig010}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Работа гидры}]{image/10.png}
+\caption{Работа гидры}\label{fig:010}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-9}
+\begin{block}{Нашли совпадение (рис. {[}-@fig:011{]})}
+\protect\phantomsection\label{ux43dux430ux448ux43bux438-ux441ux43eux432ux43fux430ux434ux435ux43dux438ux435-ux440ux438ux441.--fig011}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Гидра успешна нашла нам пароль}]{image/11.png}
+\caption{Гидра успешна нашла нам пароль}\label{fig:011}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-10}
+\begin{block}{Через ssh заходим на компьютер, пользуясь полученным
+паролем (рис. {[}-@fig:012{]})}
+\protect\phantomsection\label{ux447ux435ux440ux435ux437-ssh-ux437ux430ux445ux43eux434ux438ux43c-ux43dux430-ux43aux43eux43cux43fux44cux44eux442ux435ux440-ux43fux43eux43bux44cux437ux443ux44fux441ux44c-ux43fux43eux43bux443ux447ux435ux43dux43dux44bux43c-ux43fux430ux440ux43eux43bux435ux43c-ux440ux438ux441.--fig012}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={ssh сессия}]{image/12.png}
+\caption{ssh сессия}\label{fig:012}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-11}
+\begin{block}{Находим флажок. Захватываем его (рис. {[}-@fig:013{]})}
+\protect\phantomsection\label{ux43dux430ux445ux43eux434ux438ux43c-ux444ux43bux430ux436ux43eux43a.-ux437ux430ux445ux432ux430ux442ux44bux432ux430ux435ux43c-ux435ux433ux43e-ux440ux438ux441.--fig013}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Флаг захвачен!}]{image/13.png}
+\caption{Флаг захвачен!}\label{fig:013}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-12}
+\begin{block}{Как альтернатива: пользуемся модулём ssh\_login (рис.
+{[}-@fig:014{]})}
+\protect\phantomsection\label{ux43aux430ux43a-ux430ux43bux44cux442ux435ux440ux43dux430ux442ux438ux432ux430-ux43fux43eux43bux44cux437ux443ux435ux43cux441ux44f-ux43cux43eux434ux443ux43bux451ux43c-ssh_login-ux440ux438ux441.--fig014}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={ssh\_login}]{image/14.png}
+\caption{ssh\_login}\label{fig:014}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\protect\phantomsection\label{section-13}
+\begin{block}{Флажок найден (повторно) (рис. {[}-@fig:015{]})}
+\protect\phantomsection\label{ux444ux43bux430ux436ux43eux43a-ux43dux430ux439ux434ux435ux43d-ux43fux43eux432ux442ux43eux440ux43dux43e-ux440ux438ux441.--fig015}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio,alt={Флаг захвачен! х2}]{image/15.png}
+\caption{Флаг захвачен! х2}\label{fig:015}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{Выводы}
+\protect\phantomsection\label{ux432ux44bux432ux43eux434ux44b}
+Отработали сценарий: Захват DNS-Сервера.
+\end{frame}
